@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
+
 const workoutSchema = new Schema(
   {
     day: {
@@ -44,10 +46,10 @@ const workoutSchema = new Schema(
   }
 );
 // adds a dynamically-created property to schema
-/*workoutSchema.virtual("totalDuration").get(function () {
+workoutSchema.virtual("totalDuration").get(function () {
   return this.exercises.reduce((total, exercise) => {
     return total + exercise.duration;
   }, 0);
-});*/
+});
 const Workout = mongoose.model("Workout", workoutSchema);
 module.exports = Workout;

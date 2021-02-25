@@ -4,11 +4,11 @@ An application where the user can add workouts consisting of both cardio and res
 
 ## Dependencies
 
-Node packages:
-Mongoose
-Morgan
-Express
+Node packages:  
+Mongoose  
+Morgan  
+Express  
 
 ## Usage
 
-after installing the above node packages, run the seed file (npm run seed) and start the server through terminal with node server.js
+After running NPM install start your local mongoose server. Then input the terminal commands npm run seed and npm start.

@@ -17,7 +17,14 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {useFindAndModify: false, useUnifiedTopology: true } );
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useFindAndModify: false, 
+  useUnifiedTopology: true } );
+
+  const db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', function() {console.log("open!")
+  });
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
