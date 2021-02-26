@@ -1,26 +1,26 @@
 const router = require("express").Router();
-const mongoose = require('mongoose');
 const Workout = require("../models/newmodel");
 
 router.get("/api/workouts/range", (req, res) => {
     Workout.find({}, (err, data) => {
         if (err) { console.log(err) }
-        else { res.json(data) }
+        else { res.send(data) }
     });
 });
 
 router.get("/api/workouts", (req, res) => {
-    Workout.find({})
-        .then((dbWorkout) => {
-            res.json(dbWorkout)
+    Workout.find({}).sort({ date: -1 })
+        .then(data => {
+            return res.json(data)
         })
         .catch(err => {
             res.status(404).json(err);
+            console.log(res)
         });
 });
 
 router.post("/api/workouts", ({ body }, res) => {
-    Schema.create(body)
+    Workout.create(body)
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
@@ -30,21 +30,30 @@ router.post("/api/workouts", ({ body }, res) => {
 });
 
 router.put("/api/workouts/:id", (req, res) => {
-    console.log(req);
-    var target = req.params._id;
-    Workout.findByIdAndUpdate(target, req.body, function(err, result){
-        if(err){
-            res.send(err)
+    var target = req.params.id;
+    var add = req.body;
+    Workout.updateOne(
+        {
+            _id: target
+        },
+        {
+            $set: {
+                day: new Date().setDate(new Date().getDate()),
+            },
+            $push: {
+                exercises: [add]
+            }
+        },
+        (error, edited) => {
+            if (error) {
+                console.log(error);
+                res.send(error);
+            } else {
+                console.log(edited);
+                res.send(edited);
+            }
         }
-        else{
-            res.send(result)
-        }
-    })
+    );
 })
-
-
-
-
-
 
 module.exports = router;

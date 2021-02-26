@@ -2,29 +2,32 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const Router = require("express").Router();
-const htmlroutes = require("./routes/HTMLroutes")
-const apiroutes = require("./routes/APIroutes")
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(express.static("public"));
-app.use("/", htmlroutes);
-app.use("/", apiroutes);
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-  useFindAndModify: false, 
-  useUnifiedTopology: true } );
+app.use(express.static("public"))
 
-  const db = mongoose.connection;
-  db.on('error', console.error.bind(console, 'connection error:'));
-  db.once('open', function() {console.log("open!")
-  });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+});
+
+app.use(require("./routes/APIroutes.js"));
+app.use(require("./routes/HTMLroutes.js"));
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  console.log("open!")
+});
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
