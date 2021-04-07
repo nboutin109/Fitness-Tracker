@@ -5,7 +5,7 @@
 
 # Installation
 <p>A live deployment can be found here: <a href="https://mongo-fitness-tracker109.herokuapp.com/">https://mongo-fitness-tracker109.herokuapp.com/</a></p>
-<p>To use locally use the following steps.</p>
+<p>To install locally use the following steps.</p>
 <ol>
     <li>Download the files from Github</li>
     <li>Install and setup Node.js</li>
