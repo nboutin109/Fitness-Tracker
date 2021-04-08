@@ -5,7 +5,7 @@
 
 # Installation
 <p>A live deployment can be found here: <a href="https://mongo-fitness-tracker109.herokuapp.com/">https://mongo-fitness-tracker109.herokuapp.com/</a></p>
-<p>To install locally use the following steps.</p>
+<p>To install locally use the following steps:</p>
 <ol>
     <li>Download the files from Github</li>
     <li>Install and setup Node.js</li>
@@ -15,7 +15,8 @@
     <li>Run the command npm install in your terminal</li>
     <li>Edit line 16 of server.js with your MongoDB details</li>
     <li>Run the database seed with the command npm run seed in your terminal</li>
-    <li>Open the index.html file in browser</li>
+    <li>Run the terminal command npm start</li>
+    <li>The webpage is now available on your device at localhost:3000</li>
 </ol>
 
 ## Built With
