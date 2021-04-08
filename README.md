@@ -30,4 +30,4 @@
 </ul>
 
 ## Code Overview
-<p>The pages are rendered and styled by Semantic UI and the .css/.html files in the public folder. The back end and database connection are handled by the js files in the routes folder connected to the server.js file. Each page has it's own .js file in the public folder to create and functionalize the user interface, along with the api.js file which works to connect with the API routing for asynchronous back end routes. The models folder defines the schema for an exercise.</p>
+<p>The pages are rendered and styled by Semantic UI and the .css/.html files in the public folder. The back end and database connections are handled by the js files in the routes folder connected to the server.js file. Each page has it's own .js file in the public folder to create and functionalize the user interface, along with the api.js file which works to connect with the API routing for asynchronous back end routes. The models folder defines the schema for an exercise.</p>
