@@ -1,10 +1,10 @@
 # Title
 <p>MongoDB Fitness Tracker</p>
 <p>This application allows the user to create and view data on their workouts. Workouts can be continued, or a new one can be started each time including cardio and strength training workout types. Data statistics can then be viewed as graphs.</p>
-<a href="https://mongo-fitness-tracker109.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img src="public/Fitness.PNG" height="250px" width="400px"/></a>
+<a href="https://mongo-fitness-tracker109.herokuapp.com/"><img src="public/Fitness.PNG" height="250px" width="400px"/></a>
 
 # Installation
-<p>A live deployment can be found here: <a href="https://mongo-fitness-tracker109.herokuapp.com/" target="_blank" rel="noopener noreferrer">https://mongo-fitness-tracker109.herokuapp.com/</a></p>
+<p>A live deployment can be found here: <a href="https://mongo-fitness-tracker109.herokuapp.com/">https://mongo-fitness-tracker109.herokuapp.com/</a></p>
 <p>To install locally use the following steps:</p>
 <ol>
     <li>Download the files from Github</li>
